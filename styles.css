@@ -1,0 +1,672 @@
+:root {
+    --primary-color: #012641;
+    --accent-color: #60b3d1;
+    --background-light: #f4fbfd;
+    --text-dark: #000;
+    --border-color: rgba(0, 0, 0, 0.3);
+    --transition-speed: 0.3s;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all var(--transition-speed) ease;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Header Section */
+  .header {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    overflow: hidden;
+  }
+  
+  .navigation {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-light);
+    border-bottom: 3px solid var(--border-color);
+    padding: 1px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  
+  .nav-container {
+    background-color: var(--background-light);
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 40px;
+  }
+  
+  .logo {
+    color: var(--primary-color);
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 6px;
+  }
+  
+  .logo-highlight {
+    color: var(--accent-color);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--accent-color);
+  }
+  
+  .nav-link {
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus {
+    color: var(--primary-color);
+  }
+  
+  .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  /* Main Content Section */
+  .main-content {
+    align-self: center;
+    width: 100%;
+    max-width: 1226px;
+    margin: 43px 0 0 10px;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .text-column,
+  .image-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    line-height: normal;
+  }
+  
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    align-items: start;
+    color: var(--primary-color);
+    margin: auto 0;
+    font-size: 20px;
+  }
+  
+  .heading {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 1.2;
+  }
+  
+  .description {
+    color: var(--text-dark);
+    font-weight: 300;
+    align-self: stretch;
+    margin-top: 61px;
+  }
+  
+  .cta-button {
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 22px 31px;
+    font-size: 20px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+  }
+  
+  .cta-button:hover,
+  .cta-button:focus {
+    background-color: rgba(1, 38, 65, 0.1);
+  }
+  
+  .cta-button.translating {
+    background-color: #808080;
+    color: white;
+  }
+  
+  .image-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 20px;
+    opacity: 1;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  .image-column.hidden {
+    opacity: 0;
+  }
+  
+  .profile-image {
+    aspect-ratio: 1;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 991px) {
+    .nav-container {
+        padding: 20px;
+    }
+  
+    .nav-links {
+        gap: 20px;
+    }
+  
+    .main-content {
+        margin: 40px 20px;
+    }
+  
+    .content-wrapper {
+        flex-direction: column;
+    }
+  
+    .text-column,
+    .image-column {
+        width: 100%;
+        margin-left: 0;
+    }
+  
+    .heading {
+        font-size: 40px;
+    }
+  
+    .description {
+        margin-top: 40px;
+    }
+  
+    .cta-button {
+        margin-top: 40px;
+        padding: 15px 25px;
+    }
+  
+    .profile-image {
+        margin-top: 40px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+  
+  /* Applying Animations */
+  .header {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .nav-links,
+  .text-content,
+  .cta-button {
+    animation: slideUp 1s ease-out;
+  }
+  
+  .nav-container,
+  .logo {
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  /*Portfolio Section*/
+  .portfolio-section {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .main-container {
+    background-color: rgba(217, 217, 217, 0.5);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .content-wrapper {
+    width: 100%;
+    max-width: 1226px;
+  }
+  
+  .content-grid {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .profile-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+  }
+  
+  .profile-image {
+    aspect-ratio: 0.64;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    flex-grow: 1;
+  }
+  
+  .info-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 20px;
+  }
+  
+  .info-content {
+    display: flex;
+    margin-top: 73px;
+    flex-direction: column;
+    align-items: start;
+    color: #000;
+    font: 300 20px 'Montserrat', sans-serif;
+  }
+  
+  .section-title {
+    color: #012641;
+    font: 800 70px 'League Spartan', sans-serif;
+  }
+  
+  .bio-text {
+    align-self: stretch;
+    margin-top: 55px;
+  }
+  
+  .interests-list {
+    margin-top: 64px;
+  }
+  
+  /*Projects Section*/
+  .projects-section {
+    background-color: #fff;
+    display: flex;
+    padding-bottom: 188px;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  
+  .brand-text {
+    color: #012641;
+    letter-spacing: 6px;
+    font: 900 30px "League Spartan", sans-serif;
+  }
+  
+  .brand-highlight {
+    color: #60b3d1;
+  }
+  
+  .section-header {
+    display: flex;
+    margin-top: 67px;
+    width: 100%;
+    max-width: 1234px;
+    align-items: center;
+    gap: 29px;
+    color: #012641;
+    flex-wrap: wrap;
+    font: 800 70px "League Spartan", sans-serif;
+  }
+  
+  .header-line {
+    align-self: stretch;
+    width: 392px;
+    max-width: 100%;
+    height: 2px;
+    margin: auto 0;
+    border: 1px solid #000;
+  }
+  
+  .header-text {
+    align-self: stretch;
+    flex-grow: 1;
+    width: 314px;
+  }
+  
+  .projects-grid {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1254px;
+  }
+  
+  .grid-container {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: start;
+    color: #000;
+    width: 100%;
+    padding: 27px 22px 73px;
+    font: 20px Montserrat, sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .project-image {
+    aspect-ratio: 1.85;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    align-self: stretch;
+  }
+  
+  .project-title {
+    font-weight: 700;
+    margin-top: 31px;
+  }
+  
+  .project-description {
+    font-weight: 300;
+    margin-top: 17px;
+  }
+  
+  .project-button {
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 15px;
+    color: #012641;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 28px 0 0 12px;
+    padding: 18px 39px;
+    border: 1px solid #012641;
+    cursor: pointer;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    background-color: rgba(248, 248, 248, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .contact-container {
+    background-color: rgba(248, 248, 248, 0.5);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 106px 69px;
+  }
+  
+  .contact-heading {
+    color: rgba(1, 38, 65, 1);
+    text-align: center;
+    font: 800 70px League Spartan, sans-serif;
+  }
+  
+  .contact-description {
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    margin-top: 62px;
+    font: 300 20px Montserrat, sans-serif;
+  }
+  
+  .content-wrapper {
+    align-self: start;
+    width: 100%;
+    max-width: 1078px;
+    margin: 34px 0 -22px;
+  }
+  
+  .content-grid {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .profile-image-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 57%;
+    margin-left: 0;
+  }
+  
+  .profile-image {
+    aspect-ratio: 1.09;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+  
+  .contact-info-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 43%;
+    margin-left: 20px;
+  }
+  
+  .contact-info-wrapper {
+    display: flex;
+    margin-top: 69px;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .name-section {
+    display: flex;
+    gap: 40px 44px;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font: 300 20px Montserrat, sans-serif;
+  }
+  
+  .contact-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 135px;
+    background-color: rgba(195, 195, 195, 1);
+    border-radius: 50%;
+    height: 135px;
+  }
+  
+  .contact-text {
+    flex-basis: auto;
+    margin: auto 0;
+  }
+  
+  .phone-section {
+    display: flex;
+    margin-top: 13px;
+    gap: 40px 47px;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font: 300 20px Montserrat, sans-serif;
+  }
+  
+  .email-section {
+    align-self: stretch;
+    margin-top: 13px;
+  }
+  
+  .email-grid {
+    gap: 20px;
+    display: flex;
+  }
+  
+  .email-icon-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 35%;
+    margin-left: 0;
+  }
+  
+  .email-text-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 65%;
+    margin-left: 20px;
+  }
+  
+  .social-section {
+    display: flex;
+    margin-top: 13px;
+    width: 298px;
+    max-width: 100%;
+    gap: 40px 50px;
+    color: rgba(0, 0, 0, 1);
+    white-space: nowrap;
+    font: 300 20px Montserrat, sans-serif;
+  }
+  
+  .social-handle {
+    flex-grow: 1;
+    width: 90px;
+    margin: auto 0;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .contact-container {
+      max-width: 100%;
+      padding: 100px 20px;
+    }
+  
+    .contact-heading {
+      font-size: 40px;
+    }
+  
+    .contact-description {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  
+    .content-wrapper {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .content-grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .profile-image-column {
+      width: 100%;
+    }
+  
+    .profile-image {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  
+    .contact-info-column {
+      width: 100%;
+    }
+  
+    .contact-info-wrapper {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  
+    .email-grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .email-icon-column {
+      width: 100%;
+    }
+  
+    .contact-icon {
+      margin-top: 40px;
+    }
+  
+    .email-text-column {
+      width: 100%;
+    }
+  
+    .contact-text {
+      margin-top: 40px;
+    }
+  
+    .social-section {
+      white-space: initial;
+    }
+  }
+  
+  

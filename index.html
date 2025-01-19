@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header" role="banner">
+        <nav class="navigation" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <h1 class="logo" id = "logo">port<span class="logo-highlight">folio</span></h1>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active" aria-current="page">HOME</a>
+                    <a href="#about" class="nav-link">ABOUT ME</a>
+                    <a href="#projects" class="nav-link">PROJECTS</a>
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content" role="main" id = "home">
+            <div class="content-wrapper">
+                <div class="text-column">
+                    <div class="text-content">
+                        <h2 class="heading">
+                            Hello World!<br>
+                            I'm Ivy.
+                        </h2>
+                        <p class="description">
+                            I am a third year BS Information Technology student studying in
+                            Baguio City, trying to get it together. I like to chill and design
+                            minimalistic website layouts.
+                        </p>
+                        <br>
+                        <button class="cta-button" 
+                                onclick="handleProjectsClick()" 
+                                aria-label="View projects"
+                                id="projectsButton">
+                            GO TO PROJECTS
+                        </button>
+                    </div>
+                </div>
+                <div class="image-column" id="imageColumn">
+                    <img loading="lazy"
+                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/adbb5a0a3e7e2de7391c8af703749cb1cd93fffce51b31a47cc96734755e92cc?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&"
+                         class="profile-image"
+                         alt="Profile photo of Ivy"
+                         width="500"
+                         height="500">
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <section class="portfolio-section" id = "about">
+        <div class="main-container">  
+          <main class="content-wrapper">
+            <div class="content-grid">
+              <div class="profile-column">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff074b94a9bfb0e54dcdf479dc7c0adca02d6b080a07c5436dfc11093c91ada1?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" 
+                  alt="Profile photo of Ivy Noreen"
+                />
+              </div>
+              <div class="info-column">
+                <div class="info-content">
+                  <h2 class="section-title">about me</h2>
+                  <p class="bio-text">
+                    My name is Ivy Noreen, but you may simply call me Ivy. I am 21 years old, currently residing in Tuba, Benguet. I am in my final year of my schooling, BS Information Technology. I like to design websites, I think it's cool and fun. I also like to edit videos for fun.
+                  </p>
+                  <div class="interests-list">
+                    My Likes:<br>
+                    Any Pasta dish<br>
+                    Dogs and Cats<br>
+                    Journaling<br>
+                    Going outdoors, walking around<br>
+                    Coffee<br><br>
+                    My Dislikes:<br>
+                    Being inactive or bedrotting<br>
+                    Desserts that are too sweet
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </section>
+
+      <section class="projects-section" id = "projects">    
+        <header class="section-header">
+          <div class="header-line" role="presentation"></div>
+          <h2 class="header-text">my projects</h2>
+          <div class="header-line" role="presentation"></div>
+        </header>
+      
+        <main class="projects-grid">
+          <div class="grid-container">
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/91b7e70d8bb2ed6b8d9d96fa14805fde9193b77d5cf147b26501f2409d46388d?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="SenyasHub Project Screenshot" class="project-image">
+              <h3 class="project-title">SenyasHub</h3>
+              <p class="project-description">Our capstone project which is a web app for learning sign language.</p>
+              <button class="project-button" tabindex="0">SEE PROJECT</button>
+            </article>
+      
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4885fdcf4a4a6de5154690cfabc615c140de978ddc8a6fc831bf1e12cac609eb?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Dice Roller App Screenshot" class="project-image">
+              <h3 class="project-title">Dice Roller</h3>
+              <p class="project-description">My first mobile app designed in Android Studio.</p>
+              <button class="project-button" tabindex="0">SEE PROJECT</button>
+            </article>
+      
+            <article class="project-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/57ed8e597b06da3461040400c7a3da66cacfbd36e463e23406c9865d58601608?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Art Space App Screenshot" class="project-image">
+              <h3 class="project-title">Art Space</h3>
+              <p class="project-description">Another mobile app designed using Android Studio, showcasing a few art works from famous artists.</p>
+              <button class="project-button" tabindex="0">SEE PROJECT</button>
+            </article>
+          </div>
+        </main>
+      </section>
+
+      <section class="contact-section" aria-label="Contact Information" id = "contact">
+        <div class="contact-container">
+          <h1 class="contact-heading">contact me!</h1>
+          <p class="contact-description">
+            Want to start a project with me? Get in touch using the communication
+            channels below.
+          </p>
+          <div class="content-wrapper">
+            <div class="content-grid">
+              <div class="profile-image-column">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/b06d480ff7dcaf42b42078ff83688a912e8687053d0408acc17a5297c1271e5e?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&"
+                  class="profile-image"
+                  alt="Profile showcase"
+                />
+              </div>
+              <div class="contact-info-column">
+                <div class="contact-info-wrapper">
+                  <div class="name-section">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e422c9a0-09d5-4f8b-8036-4544323457ff?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&"
+                      class="contact-icon"
+                      alt="Profile icon"
+                    />
+                    <span class="contact-text">Ivy Noreen Aquino</span>
+                  </div>
+                  <div class="phone-section">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2a32125-d48f-4d91-a5d0-6916e012a9f4?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&"
+                      class="contact-icon"
+                      alt="Phone icon"
+                    />
+                    <span class="contact-text">
+                      +63 977 687 8546
+                      <br />
+                      +63 976 304 4469
+                    </span>
+                  </div>
+                  <div class="email-section">
+                    <div class="email-grid">
+                      <div class="email-icon-column">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/bf7a97db-cff2-4373-b8e4-fe922e729fcc?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&"
+                          class="contact-icon"
+                          alt="Email icon"
+                        />
+                      </div>
+                      <div class="email-text-column">
+                        <span class="contact-text">aquino.ivy09@gmail.com</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="social-section">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e9d9f7e-8100-4347-be4d-5db7b4341c2d?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&"
+                      class="contact-icon"
+                      alt="Social media icon"
+                    />
+                    <span class="social-handle">aybiisauuur</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+</body>
+</html>
