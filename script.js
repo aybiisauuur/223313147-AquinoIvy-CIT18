@@ -32,38 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Select the portfolio section and its elements
-    const portfolioSection = document.querySelector('.portfolio-section');
-    const profileImage = document.querySelector('.profile-image');
-    const infoContent = document.querySelector('.info-content');
-  
-    // Define the options for the Intersection Observer
+document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
-      root: null, // Observe from the viewport
-      rootMargin: "0px", // Trigger when the section reaches the viewport
-      threshold: 0.5 // Trigger when 50% of the section is visible
+      root: null, // Use the viewport as the root
+      threshold: 0.1, // Trigger when 10% of the element is visible
     };
   
-    // Intersection Observer callback
-    const observerCallback = (entries, observer) => {
+    const animateOnScroll = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Add the 'animate' class to trigger the animations
-          portfolioSection.classList.add('animate');
-          profileImage.classList.add('animate');
-          infoContent.classList.add('animate');
-          observer.unobserve(entry.target); // Stop observing once the animation triggers
+          entry.target.classList.add(entry.target.dataset.animation); // Add animation class
+          observer.unobserve(entry.target); // Stop observing after animation
         }
       });
     };
   
-    // Create the observer instance
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(animateOnScroll, observerOptions);
   
-    // Start observing the portfolio section
-    observer.observe(portfolioSection);
+    document.querySelectorAll("[data-animation]").forEach(element => {
+      observer.observe(element);
+    });
   });
+  
+  
 
   document.addEventListener("DOMContentLoaded", function () {
     // Select the projects section and its elements

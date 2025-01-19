@@ -265,96 +265,226 @@
     animation: fadeIn 1.5s ease-in;
   }
   
-  /* Portfolio Section */
-.portfolio-section {
+  /* Portfolio Section */ 
+  :root {
+    --primary-blue: rgba(1, 38, 65, 1);
+    --accent-blue: rgba(96, 179, 209, 1);
+    --text-color: rgba(0, 0, 0, 1);
+    --bg-light: rgba(244, 251, 253, 1);
+    --border-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .about-section {
     background-color: #fff;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease-in-out; /* Transition for fade-in effect */
-  }
-  
-  .portfolio-section.animate {
-    opacity: 1; /* Fade-in when in view */
   }
   
   .main-container {
     background-color: rgba(217, 217, 217, 0.5);
     display: flex;
     width: 100%;
-    flex-direction: column;
+    padding: 40px 20px;
   }
   
   .content-wrapper {
+    display: flex;
     width: 100%;
-    max-width: 1226px;
+    max-width: 1259px;
+    margin: 75px 0;
   }
   
   .content-grid {
-    gap: 20px;
     display: flex;
+    flex-direction: row; /* Ensure items are aligned horizontally */
+    align-items: flex-start;
+    gap: 20px; /* Add spacing between the image and the education-skills */
   }
   
-  .profile-column-portfolio {
+  .about-content {
     display: flex;
+    margin-top: 8px;
     flex-direction: column;
-    line-height: normal;
-    width: 50%;
-  }
-  
-  .profile-image {
-    aspect-ratio: 0.64;
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    flex-grow: 1;
-    transform: translateY(30px); /* Initial position for animation */
-    opacity: 0;
-    transition: transform 1s ease, opacity 1s ease;
-  }
-  
-  .info-column {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 50%;
-    margin-left: 20px;
-  }
-  
-  .info-content {
-    display: flex;
-    margin-top: 73px;
-    flex-direction: column;
-    align-items: start;
-    color: #000;
-    font: 300 20px 'Montserrat', sans-serif;
-    transform: translateY(30px); /* Initial position for animation */
-    opacity: 0;
-    transition: transform 1s ease, opacity 1s ease;
+    color: var(--text-color);
+    font: 300 20px Montserrat, sans-serif;
   }
   
   .section-title {
-    color: #012641;
-    font: 800 70px 'League Spartan', sans-serif;
+    color: var(--primary-blue);
+    align-self: start;
+    font: 800 70px League Spartan, sans-serif;
   }
   
   .bio-text {
-    align-self: stretch;
-    margin-top: 55px;
+    margin-top: 45px;
   }
   
   .interests-list {
-    margin-top: 64px;
+    margin-top: 42px;
   }
   
-  /* Animation when element comes into view */
-  .animate .profile-image,
-  .animate .info-content {
-    transform: translateY(0); /* Move to original position */
-    opacity: 1; /* Fade-in */
+  .profile-image-about {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    border-radius: 10px;
+    flex-grow: 1;
+    max-width: 400px;
+    margin: 20px auto;
+    display: block;
+    width: 447px;
+    height: 674px;
   }
   
+  .education-skills {
+    flex: 2; /* Allow the education-skills section to take up more space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+  }
+  
+  .education-content {
+    display: flex;
+    padding-left: 7px;
+    flex-direction: column;
+    align-items: start;
+    color: var(--primary-blue);
+    font: 800 70px League Spartan, sans-serif;
+  }
+  
+  .education-details {
+    color: var(--text-color);
+    align-self: stretch;
+    margin-top: 36px;
+    font: 700 20px Montserrat, sans-serif;
+  }
+  
+  .light-text {
+    font-weight: 300;
+  }
+  
+  .skills-title {
+    margin-top: 46px;
+  }
+  
+  .skills-list {
+    color: var(--text-color);
+    margin-top: 26px;
+    font: 300 20px Montserrat, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .main-container {
+      max-width: 100%;
+      padding-bottom: 100px;
+    }
+  
+    .nav-container {
+      max-width: 100%;
+    }
+  
+    .nav-content {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  
+    .nav-links {
+      max-width: 100%;
+    }
+  
+    .content-wrapper {
+      max-width: 100%;
+      margin: 40px 0 10px;
+    }
+  
+    .content-grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .column {
+      width: 100%;
+    }
+  
+    .about-content {
+      margin-top: 40px;
+    }
+  
+    .section-title {
+      font-size: 40px;
+    }
+  
+    .bio-text {
+      margin-top: 40px;
+    }
+  
+    .interests-list {
+      margin: 40px 10px 0 0;
+    }
+  
+    .profile-image {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  
+    .education-skills {
+      margin-top: 40px;
+    }
+  
+    .education-content {
+      font-size: 40px;
+    }
+  
+    .skills-title {
+      margin-top: 40px;
+      font-size: 40px;
+    }
+  
+    .skills-list {
+      margin-right: 10px;
+    }
+  }
+
+  /* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Initial State */
+  .about-content, .profile-image-about, .education-skills {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  /* Animation Classes */
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  .animate-scaleIn {
+    animation: scaleIn 0.8s ease forwards;
+  }
   
   /* Projects Section */
 .projects-section {
