@@ -281,26 +281,29 @@
     overflow: hidden;
   }
   
-  .main-container {
+ .container {
     background-color: rgba(217, 217, 217, 0.5);
     display: flex;
     width: 100%;
     padding: 40px 20px;
-  }
-  
-  .content-wrapper {
-    display: flex;
-    width: 100%;
     max-width: 1259px;
     margin: 75px 0;
   }
   
-  .content-grid {
+  /* .content-wrapper {
     display: flex;
-    flex-direction: row; /* Ensure items are aligned horizontally */
-    align-items: flex-start;
-    gap: 20px; /* Add spacing between the image and the education-skills */
-  }
+    width: 100%;
+    max-width: 1259px;
+    margin: 75px 0;
+  } */
+  
+  /* .content-grid {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start; 
+    justify-content: space-between; 
+    gap: 20px; 
+} */
   
   .about-content {
     display: flex;
@@ -330,19 +333,21 @@
     width: 100%;
     border-radius: 10px;
     flex-grow: 1;
-    max-width: 400px;
-    margin: 20px auto;
+    max-width: 450px;
+    margin: 20px;
     display: block;
     width: 447px;
     height: 674px;
   }
   
-  .education-skills {
-    flex: 2; /* Allow the education-skills section to take up more space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-  }
+  /* Education and Skills Section */
+.education-skills {
+  flex: 2; /* Take up more space than the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  padding-left: 20px; /* Add spacing between columns */
+}
   
   .education-content {
     display: flex;
@@ -521,7 +526,7 @@
     gap: 29px;
     color: #012641;
     flex-wrap: wrap;
-    font: 800 70px "League Spartan", sans-serif;
+    font: 800 100px "League Spartan", sans-serif;
     transform: translateY(30px); /* Initial position for animation */
     opacity: 0; /* Initially hidden */
     transition: transform 1s ease, opacity 1s ease;
